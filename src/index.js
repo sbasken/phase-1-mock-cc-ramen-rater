@@ -6,8 +6,20 @@ const ramenDetail = document.querySelector('#ramen-detail')
 const ramenImg = document.querySelector(".detail-image")
 const h2 = document.querySelector("h2.name")
 const h3 = document.querySelector("h3.restaurant")
+const span = document.querySelector("#rating-display")
+const p = document.querySelector("#comment-display")
 
 const form = document.querySelector("#new-ramen")
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     fetch("http://localhost:3000/ramens")
+//     .then(res => res.json())
+//     .then(ramens => {
+//         ramenImg.src = ramens[0].image;
+//         h2.innerText = ramens[0].name;
+//         h3.innerText = ramens[0].restaurant;
+// })
+// })
 
 
 fetch("http://localhost:3000/ramens")
@@ -26,6 +38,8 @@ const renderRamen = (ramen) => {
         ramenImg.src = ramen.image;
         h2.innerText = ramen.name;
         h3.innerText = ramen.restaurant;
+        span.innerText = ramen.rating;
+        p.innerText = ramen.comment;
 
     })
 }
